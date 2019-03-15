@@ -1,17 +1,83 @@
 ﻿@{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Контакт";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@*<h3>@ViewData["Message"]</h3>*@
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-plain">
+                    <div class="card-header">
+                        <h1 class="profile-title text-left">@ViewData["Title"]</h1>
+                        <h5 class="text-on-back">03</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Име</label>
+                                        <input type="text" class="form-control" value="Веселин">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Емайл Адрес</label>
+                                        <input type="email" class="form-control" placeholder="veselinbeev@email.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label> Телефон</label>
+                                        <input type="text" class="form-control" value="+359 897333503">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Съобщение</label>
+                                        <input type="text" class="form-control" placeholder="Привет ">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-round float-right" rel="tooltip" data-original-title="Нямам търпение да се чуя с вас :)" data-placement="right">Изпрати</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ml-auto">
+                <div class="info info-horizontal">
+                    <div class="icon icon-primary">
+                        <i class="tim-icons icon-square-pin"></i>
+                    </div>
+                    <div class="description">
+                        <h4 class="info-title">Тук можеш да не намериш </h4>
+                        <p>
+                            Гр Пловдив,
+                            <br> ул. брезовско шосе 145
+                            <br> България
+                        </p>
+                    </div>
+                </div>
+                <div class="info info-horizontal">
+                    <div class="icon icon-primary">
+                        <i class="tim-icons icon-mobile"></i>
+                    </div>
+                    <div class="description">
+                        <h4 class="info-title">Позвани ми</h4>
+                        <p>
+                            Веселин Беев
+                            <br> +359 897 333 503
+                            <br> Понеделник - Петък, 9:00-21:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

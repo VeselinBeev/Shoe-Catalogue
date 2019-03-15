@@ -10,6 +10,8 @@ namespace Web.Models.Shoe
         public int Id { get; set; }
         public decimal Number { get; set; }
         public string Details { get; set; }
+        public string Title { get; set; }
+        public string Type { get; set; }
 
         public List<SpecificShoe> SpecificShoes { get; set; }
 

@@ -54,7 +54,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Number,Details")] ShoeSize shoeSize)
+        public async Task<IActionResult> Create([Bind("Id,Number,Details,Type,Gender")] ShoeSize shoeSize)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Number,Details")] ShoeSize shoeSize)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Number,Details,Type,Gender")] ShoeSize shoeSize)
         {
             if (id != shoeSize.Id)
             {

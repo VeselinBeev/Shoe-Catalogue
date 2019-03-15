@@ -12,13 +12,16 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Number)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Details)
-                </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+   
         </tr>
     </thead>
     <tbody>
@@ -30,6 +33,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Details)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+        
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
