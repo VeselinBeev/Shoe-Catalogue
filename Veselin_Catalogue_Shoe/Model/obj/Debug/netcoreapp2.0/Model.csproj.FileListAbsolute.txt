@@ -1,0 +1,9 @@
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\bin\Debug\netcoreapp2.0\Model.deps.json
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\bin\Debug\netcoreapp2.0\Model.dll
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\obj\Debug\netcoreapp2.0\Model.csprojResolveAssemblyReference.cache
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\obj\Debug\netcoreapp2.0\Model.csproj.CoreCompileInputs.cache
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\obj\Debug\netcoreapp2.0\Model.AssemblyInfoInputs.cache
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\obj\Debug\netcoreapp2.0\Model.AssemblyInfo.cs
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\bin\Debug\netcoreapp2.0\Model.pdb
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\obj\Debug\netcoreapp2.0\Model.dll
+c:\users\veselin\source\repos\Veselin_Catalogue_Shoe\Model\obj\Debug\netcoreapp2.0\Model.pdb
