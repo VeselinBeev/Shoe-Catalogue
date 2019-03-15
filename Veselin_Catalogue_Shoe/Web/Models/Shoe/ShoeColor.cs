@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web.Models
+namespace Web.Models.Shoe
 {
-    public class ShoeViewModel
+    public class ShoeColor
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal? Price { get; set; }
-        public string Category { get; set; }
+
+        public List<SpecificShoe> SpecificShoes { get; set; }
     }
 }

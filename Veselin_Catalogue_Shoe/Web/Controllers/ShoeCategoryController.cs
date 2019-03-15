@@ -7,14 +7,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Web.Data;
 using Web.Models;
+using Web.Models.Shoe;
 
 namespace Web.Controllers
 {
-    public class ShoeCategoriesController : Controller
+    public class ShoeCategoryController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ShoeCategoriesController(ApplicationDbContext context)
+        public ShoeCategoryController(ApplicationDbContext context)
         {
             _context = context;
         }

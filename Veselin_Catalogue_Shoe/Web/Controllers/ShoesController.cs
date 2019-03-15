@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Web.Data;
 using Web.Models;
+using Web.Models.Shoe;
+using Web.Models.ShoeViewModels;
 
 namespace Web.Controllers
 {
@@ -57,13 +59,13 @@ namespace Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,Category")] ShoeViewModel shoeViewModel)
+        public async Task<IActionResult> Create([Bind("Id,Name,Price,Category")] SpecificShoeViewModel shoeViewModel)
         {
             if (ModelState.IsValid)
             {
                 var categoryId = Int32.Parse(shoeViewModel.Category);
 
-                var shoe = new Shoe
+                var shoe = new SpecificShoe
                 {
                     Name = shoeViewModel.Name,
                     Price = shoeViewModel.Price,
@@ -98,7 +100,7 @@ namespace Web.Controllers
     // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price")] Shoe shoe)
+    public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price")] SpecificShoe shoe)
     {
         if (id != shoe.Id)
         {

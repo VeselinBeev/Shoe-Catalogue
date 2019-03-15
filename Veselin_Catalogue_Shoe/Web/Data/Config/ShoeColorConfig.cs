@@ -9,15 +9,15 @@ using Web.Models.Shoe;
 
 namespace Web.Data.Config
 {
-    public class ShoeCategoryConfig : IEntityTypeConfiguration<ShoeCategory>
+    public class ShoeColorConfig : IEntityTypeConfiguration<ShoeColor>
     {
-        public void Configure(EntityTypeBuilder<ShoeCategory> builder)
+        public void Configure(EntityTypeBuilder<ShoeColor> builder)
         {
-            builder.ToTable(nameof(ShoeCategory));
+            builder.ToTable(nameof(ShoeColor));
 
             builder
-                .HasMany(e => e.Shoes)
-                .WithOne(p => p.Category)
+                .HasMany(e => e.SpecificShoes)
+                .WithOne(p => p.Color)
                 .OnDelete(DeleteBehavior.SetNull);
 
         }

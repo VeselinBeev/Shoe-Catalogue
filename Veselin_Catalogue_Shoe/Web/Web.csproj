@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20190312210351_Added-price-to-shoe.cs" />
     <Compile Remove="Data\Migrations\20190312210351_Added-price-to-shoe.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190315175352_RenameShoeToSpecificShoe.cs" />
+    <Compile Remove="Data\Migrations\20190315175352_RenameShoeToSpecificShoe.Designer.cs" />
   </ItemGroup>
 
 

@@ -11,9 +11,10 @@ using Web.Data;
 namespace Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190315172646_added-stock-to-shoe")]
+    partial class addedstocktoshoe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -179,7 +180,27 @@ namespace Web.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Web.Models.Shoe.ShoeCategory", b =>
+            modelBuilder.Entity("Web.Models.Shoe", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("CategoryId");
+
+                    b.Property<string>("Name");
+
+                    b.Property<decimal?>("Price");
+
+                    b.Property<bool>("Stock");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Shoe");
+                });
+
+            modelBuilder.Entity("Web.Models.ShoeCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -189,73 +210,6 @@ namespace Web.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ShoeCategory");
-                });
-
-            modelBuilder.Entity("Web.Models.Shoe.ShoeColor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ShoeColor");
-                });
-
-            modelBuilder.Entity("Web.Models.Shoe.ShoeSize", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Details");
-
-                    b.Property<decimal>("Number");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ShoeSize");
-                });
-
-            modelBuilder.Entity("Web.Models.Shoe.ShoeSizeSpecificShoe", b =>
-                {
-                    b.Property<int>("ShoeSizeId");
-
-                    b.Property<int>("SpecificShoeId");
-
-                    b.HasKey("ShoeSizeId", "SpecificShoeId");
-
-                    b.HasIndex("SpecificShoeId");
-
-                    b.ToTable("ShoeSizeSpecificShoe");
-                });
-
-            modelBuilder.Entity("Web.Models.Shoe.SpecificShoe", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("CategoryId");
-
-                    b.Property<int?>("ColorId");
-
-                    b.Property<string>("Name");
-
-                    b.Property<decimal?>("Price");
-
-                    b.Property<int?>("ShoeSizeId");
-
-                    b.Property<bool>("Stock");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("ColorId");
-
-                    b.HasIndex("ShoeSizeId");
-
-                    b.ToTable("SpecificShoe");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -303,34 +257,12 @@ namespace Web.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Web.Models.Shoe.ShoeSizeSpecificShoe", b =>
+            modelBuilder.Entity("Web.Models.Shoe", b =>
                 {
-                    b.HasOne("Web.Models.Shoe.ShoeSize", "ShoeSize")
-                        .WithMany("ShoeSizeSpecificShoes")
-                        .HasForeignKey("ShoeSizeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Web.Models.Shoe.SpecificShoe", "SpecificShoe")
-                        .WithMany("ShoeSizeSpecificShoes")
-                        .HasForeignKey("SpecificShoeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Web.Models.Shoe.SpecificShoe", b =>
-                {
-                    b.HasOne("Web.Models.Shoe.ShoeCategory", "Category")
+                    b.HasOne("Web.Models.ShoeCategory", "Category")
                         .WithMany("Shoes")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("Web.Models.Shoe.ShoeColor", "Color")
-                        .WithMany("SpecificShoes")
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.HasOne("Web.Models.Shoe.ShoeSize")
-                        .WithMany("SpecificShoes")
-                        .HasForeignKey("ShoeSizeId");
                 });
 #pragma warning restore 612, 618
         }
